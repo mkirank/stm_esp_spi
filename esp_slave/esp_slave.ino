@@ -1,12 +1,12 @@
 #include <ESP32SPISlave.h>
 
 SPIClass * vspi = NULL;
-const int MISO = 19;
-const int MOSI = 23;
-const int SCLK = 18;
-const int CS = 5;  // You can change this if you're using a different pin for chip select
+const int VSPI_MISO = 19;
+const int VSPI_MOSI = 23;
+const int VSPI_SCLK = 18;
+const int VSPI_CS = 5;  // You can change this if you're using a different pin for chip select
 
-ESP32SPISlave slave(VSPI_HOST, MISO, MOSI, SCLK, CS); // Define SPI pins
+ESP32SPISlave slave(VSPI_HOST, VSPI_MISO, VSPI_MOSI, VSPI_SCLK, VSPI_CS); // Define SPI pins using renamed constants
 
 void setup() {
     Serial.begin(115200);
